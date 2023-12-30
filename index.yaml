@@ -15,4 +15,18 @@ entries:
     urls:
     - https://github.com/hamedetemaad/helm-charts/releases/download/lineq-0.0.1/lineq-0.0.1.tgz
     version: 0.0.1
-generated: "2023-12-30T11:29:45.395591972Z"
+  lineq-operator:
+  - apiVersion: v2
+    appVersion: v0.0.1
+    created: "2023-12-30T11:32:22.680422851Z"
+    description: kubernetes operator for handling lineq WaitingRoom CRDs
+    digest: 3618f9b24077db4caa7695925979a4cc1974cfd965591be2b405365a668ff416
+    maintainers:
+    - email: etemaad.hamed@gmail.com
+      name: hamedetemaad
+    name: lineq-operator
+    type: application
+    urls:
+    - https://github.com/hamedetemaad/helm-charts/releases/download/lineq-operator-0.0.1/lineq-operator-0.0.1.tgz
+    version: 0.0.1
+generated: "2023-12-30T11:32:22.680428792Z"
