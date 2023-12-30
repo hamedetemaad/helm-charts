@@ -1,0 +1,40 @@
+nameOverride: ""
+fullnameOverride: ""
+
+image:
+  repository: h6m9d/lineq-operator
+  pullPolicy: IfNotPresent
+  tag: "v0.0.1"
+
+env: production
+
+logLevel: info
+
+numWorkers: 2
+
+ha:
+  enabled: true
+  leaderElection:
+    leaseDurationSeconds: 15
+    renewDeadlineSeconds: 10
+    retryPeriodSeconds: 2
+  replicaCount: 3
+
+lineq:
+  tcpHost: lineq-tcp.lineq.svc
+  httpHost: lineq-http.lineq.svc
+  tcpPort: 11111
+  httpPort: 8060
+
+monitoring:
+  enabled: true
+  path: /metrics
+  port: 2112
+  namespace: monitoring
+  interval: 10s
+  labels:
+    release: monitoring
+
+resources: {}
+
+nodeSelector: {}

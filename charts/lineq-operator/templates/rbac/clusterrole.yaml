@@ -1,0 +1,41 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "lineq-operator.fullname" . }}
+  labels:
+    {{ include "lineq-operator.labels" . | nindent 4 }}
+rules:
+  - apiGroups:
+      - lineq.io
+    resources:
+      - waitingrooms
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - networking.k8s.io
+    resources:
+      - ingresses
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+  - apiGroups: [""]
+    resources: 
+      - configmaps
+    verbs:
+      - get
+      - update
+  {{ if .Values.ha.enabled }}
+  - apiGroups:
+      - coordination.k8s.io
+    resources:
+      - leases
+    verbs:
+      - get
+      - watch
+      - create
+      - update
+  {{ end }}
