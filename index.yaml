@@ -1,0 +1,18 @@
+apiVersion: v1
+entries:
+  lineq:
+  - apiVersion: v2
+    appVersion: v0.0.1
+    created: "2023-12-30T11:29:45.395586382Z"
+    description: lineq, implemention of Virtual Waiting Room Using HAProxy’s Peers
+      Protocol(v2.1)
+    digest: eef7d4d582a503e6c0b357c4619fc087d44cf55f85b1a22838a0534a32244f18
+    maintainers:
+    - email: etemaad.hamed@gmail.com
+      name: hamedetemaad
+    name: lineq
+    type: application
+    urls:
+    - https://github.com/hamedetemaad/helm-charts/releases/download/lineq-0.0.1/lineq-0.0.1.tgz
+    version: 0.0.1
+generated: "2023-12-30T11:29:45.395591972Z"
