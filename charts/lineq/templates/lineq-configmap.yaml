@@ -1,0 +1,20 @@
+apiVersion: v1
+data:
+  lineq.cfg: |
+    {
+      "tcp_host" : "{{ .Values.tcpService.host }}",
+      "web_host" : "{{ .Values.httpService.host }}",
+      "tcp_port" : "{{ .Values.tcpService.port }}",
+      "web_port" : "{{ .Values.httpService.port }}",
+      "target_port" : "80",
+      "service_mode" : "vwr",
+      "vwr_room_table" : "{{ .Values.roomTableName }}",
+      "vwr_session_duration": {{ .Values.sessionDuration }},
+      "vwr_user_table" : "{{ .Values.userTableName }}",
+      "routes": {
+      }
+    }
+kind: ConfigMap
+metadata:
+  name: lineq-cm
+  namespace: lineq
